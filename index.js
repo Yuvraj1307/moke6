@@ -8,7 +8,9 @@ const { auth } = require("./middleware/auth")
 const app=express()
 
 app.use(express.json())
-
+app.get("/",(req,res)=>{
+    res.status(200).send("hello")
+})
 app.use("/user",userRout)
 
 app.use(auth)
